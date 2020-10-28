@@ -12,7 +12,7 @@ PID_FILE=/tmp/MMDVMHost.pid
 do_start() {
   if [ -e ${CONF_FILE} ]; then
     echo "Starting..."
-    ${BIN_FILE} ${CONF_FILE}
+    ${BIN_FILE} ${CONF_FILE} &
     sleep 5
     local PID=`pidof ${PKG_NAME}`
     if [ $? -eq 1 ]; then
